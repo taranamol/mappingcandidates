@@ -34,7 +34,7 @@ app.controller('MainCtrl', ['$scope', 'Candidate', function ($scope, Candidate) 
     
   $scope.showEvents = function(candidate) {
     console.log(candidate.show);
-  candidate.show = !candidate.show;
+    candidate.show = !candidate.show;
   }
 
   $scope.allCandidates = Candidate.query();
@@ -49,7 +49,7 @@ app.controller('MainCtrl', ['$scope', 'Candidate', function ($scope, Candidate) 
     angular.forEach($scope.allCandidates, function (value) {
       value.events.forEach(function(candidateEvent) {
 
-        var contentString = '<div id="content">'+ '<h4>' + candidateEvent.title + '</h4>' + '<hr>' + candidateEvent.date + '<br>' + candidateEvent.time + '<br>' + candidateEvent.url;
+        var contentString = '<div id="content">'+ '<h3>' + candidateEvent.title + '</h3>' + '<hr>' + '<h4>' + candidateEvent.date + '<br>' + candidateEvent.time + '<br>' + candidateEvent.url + '</h4>';
 
         var infowindow = new google.maps.InfoWindow({
           content: contentString
