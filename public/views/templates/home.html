@@ -1,3 +1,4 @@
+
 <!-- MAP -->
     <div class="col-sm-8" id="map">
       <center>
@@ -13,12 +14,13 @@
       <div ng-repeat="candidate in allCandidates">
           <h4>{{candidate.name}} ({{candidate.party}})</h4> 
           
-          <button class="btn btn-danger" ng-click="showEvents() ng-model="events">See Events</button>
-
-          <input type="checkbox" ng-model="checked" aria-label="Toggle ngHide">
+          <button class="btn btn-danger" ng-click="showEvents(candidate)">See Events</button>
+<!-- 
+          <input type="checkbox" ng-model="checked" aria-label="Toggle ngHide"> -->
+          
           <hr>
 
-        <div ng-repeat="event in candidate.events" ng-show="checked" ng-show="events">
+        <div ng-repeat="event in candidate.events" ng-show="candidate.show">
           <p>Event: {{event.title}}</p>
           <p>Date: {{event.date}}</p>
           <p>Time: {{event.time}}</p>

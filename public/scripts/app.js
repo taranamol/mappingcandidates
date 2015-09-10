@@ -32,12 +32,11 @@ app.service('Candidate', ['$resource', function ($resource) {
 
 app.controller('MainCtrl', ['$scope', 'Candidate', function ($scope, Candidate) {
     
-  // $scope.events = true;
-  // $scope.showEvents = function() {
-  //   console.log(showEvents);
-  // $scope.events = !$scope.events;
-  // }
-    
+  $scope.showEvents = function(candidate) {
+    console.log(candidate.show);
+  candidate.show = !candidate.show;
+  }
+
   $scope.allCandidates = Candidate.query();
 
   $scope.$on('mapInitialized', function (event, map) {
